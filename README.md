@@ -11,12 +11,11 @@ In this workshop, we will learn how to train **regression models** - machine Lea
 
 | **Project Goal**              | Learn how to predict car prices / instagram likes based on data |
 | ----------------------------- | --------------------------------------------------------------------- |
-| **What will you learn**       | What is machine learning and regression models. How to use No Code tools in [Azure ML](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-56424-dmitryso) to train and deploy a regression model |
+| **What will you learn**       |  Train a classification model with no-code AutoML in the Azure Machine Learning studio |
 | **What you'll need**          | [Azure Subscription](https://azure-for-academics.github.io/getting-azure/) |
 | **Duration**                  | *1 hour*                                                                |
-| **Just want to try the app or see the solution?** |  |
-| **Slides** | [Powerpoint](RegressionAMLDesigner.pptx), [SpeakerDeck](https://speakerdeck.com/shwars/covid-paper-exploration-the-workshop) |
-| **Author** | [Dmitry Soshnikov](http://soshnikov.com) |
+| **Slides** | [Powerpoint](https://), [SpeakerDeck](https://) |
+| **Author** | [AYUSH JHA](https://ayush-jha.me/) |
 
 
 ## Video walk-through
@@ -25,7 +24,7 @@ In this workshop, we will learn how to train **regression models** - machine Lea
 
 ## What students will learn
 
-In this project, you will learn about **regression** - a family of Machine Learning algorithms used to make numerical predictions based on data. We will learn how to use **Low-Code/No-Code** tools in [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/?WT.mc_id=academic-56424-dmitryso) to train and deploy  a regression model.
+In this project, you will learn how to train a classification model with no-code AutoML using Azure Machine Learning automated ML in the Azure Machine Learning studio. This classification model predicts if a client will subscribe to a fixed term deposit with a financial institution.
 
 ## Prerequisites
 
@@ -52,24 +51,8 @@ Then, you need to create **compute resources**. Follow [the instructions on Lear
 
 > **Note**: With newer release of Azure Machine Learning studio, you can avoid creating compute cluster altogether, and use compute instance to run your experiment. Using clusters to run experiments makes sense when you need fast compute that you want to schedule automatically. In our case, you can save time by not using compute cluster.
 
-## Milestone 2: Create the Experiment, Explore and Clean Data
+## Milestone 2: Run an automated machine learning experiment
 
-To train our model, we will be using [Azure ML Designer](https://azure.microsoft.com/services/machine-learning/designer/?WT.mc_id=academic-56424-dmitryso) to create an experiment pipeline. Follow [the instructions on Learn](https://docs.microsoft.com/learn/modules/create-regression-model-azure-machine-learning-designer/4-explore-data/?WT.mc_id=academic-56424-dmitryso) to start the new experiment and explore the dataset.
-
-You should be able to view the dataset:
-
-![Automobile prices dataset](images/explore-data.png)
-
-Notice the missing `NaN` values. We need to get rid of those before training the model. There are also some missing values in other columns. Cleaning the data involves two steps:
-
-* Remove the `normalized-losses` column altogether using **Select Columns in Dataset** box, because it contains too many missing values
-* `bore`, `stroke` and `horsepower` columns also contain some missing values, so we will use **Clean missing data** to remove only rows with missing values.
-
-> If you do not see **By name** option when adding field names in the options, make sure you have configured the experiement to use one of the compute options you have created on the previous step. 
-
-Finally, because all numeric data are on different scale, we need to **Normalize Data** block to scale all numeric values into 0-1 interval. This should be done for the following columns: `symboling`, `wheel-base`, `length`, `width`, `height`, `curb-weight`, `engine-size`, `bore`, `stroke`, `compression-ratio`, `horsepower`, `peak-rpm`, `city-mpg`, `highway-mpg`.
-
-You can run the experiment and see the data at the end of the pipeline to make sure everything works correctly.
 
 ## Milestone 3: Train the model and evaluate results
 
